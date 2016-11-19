@@ -1,0 +1,62 @@
+<!DOCTYPE html5>
+<html ng-app="SantaList">
+<head>
+	<meta context="text/html; charset=UTF=8">
+	<meta charset="utf-8">
+	<title>Santa's List</title>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+
+	<!-- CSS -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<h1>Naughty or Nice List</h1>
+
+	<div ng-controller="formCtrl" class="container">
+
+		<div ng-view></div>
+
+		<div>
+			<div class="sidenav" ng-class="{'open': add}">
+				<span class="menu" ng-click="menu()"><i class="fa fa-plus fa-lg"></i></span>
+			  	<form name="kidForm" ng-submit="addChild()">
+					<label for="name">Name</label>
+				    <input type="text" id="name" ng-model="newKid" required/>
+				    <label for="gift">Gift</label>
+				    <input type="text" id="gift" ng-model="newWish" required/>
+				    <div class="select">
+				    	<select ng-model="newState" required>
+					    	<option value="Nice">Nice</option>
+					    	<option value="Naughty">Naughty</option>
+					    </select>
+				    </div>
+				    <button class="submitButton" ng-disabled="kidForm.$invalid" ng-click="addChild(kids)">Add</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="bottomNav">
+			<a href="#/" class="additionalIcons">
+				<i class="fa fa-home"></i>
+				<span class="iconLabel">List</span>
+			</a>
+			<a href="#wishlist" class="additionalIcons">
+				<i class="fa fa-file"></i>
+				<span class="iconLabel">Wishlist</span>
+			</a>
+			<div ng-controller="PrintCtrl" class="additionalIcons">
+				<i ng-click="printLog(kids)" class="fa fa-print"></i>
+				<span class="iconLabel">Print to Console</span>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts 'n Stuff -->
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+	padding: 0 30px;
+	font-family: 'Roboto', sans-serif;
+	background: red;
+	background: linear-gradient(to right, #005C97 , #363795);
+	color: white;
+	overflow: hidden;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 7%;
+}
+
+form {
+    padding: 20px;
+    margin-top: 35%;
+}
+
+table {
+	width: 66%;
+	margin: 45px 0 0 17%;
+	text-align: center;
+}
+
+td {
+	padding: 6px 0;
+	overflow: hidden;
+	white-space: wrap;
+	text-overflow: ellipsis;
+	min-width: 200px;
+	max-width: 250px;
+}
+
+ul li {
+	list-style: none;
+}
+
+.table-input {
+	font-size: 16px;
+}
+
+input {
+	border: 0;
+	margin: 0 0 10px;
+	background: transparent;
+	border-bottom: 1px solid black;
+	width: 200px;
+	padding: 8px;
+	display: block;
+	font-size: 22px;
+	color: white;
+	transition: all .3s ease;
+}
+
+input:focus,
+input:active {
+	outline: 0;
+	width: 250px;
+	border-bottom-color: white;
+}
+
+.sidenav,
+.sidenav--edit {
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -270px;
+    background-color: transparent;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav--edit {
+    left: -350px;
+}
+
+.sidenav.open,
+.sidenav--edit.open {
+    left: 0;
+}
+
+.menu {
+	position: fixed;
+    left: 28px;
+    top: 100px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.actionIcon {
+	cursor: pointer;
+	font-size: 22px;
+	padding: 18px 0;
+}
+
+.submitButton {
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button:disabled {
+	background-color: gray;
+}
+
+.select,
+.select--edit {
+    padding: 10px;
+    margin: 30px 0;
+    border: 1px solid #ccc;
+    width: 177px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+    background: #fff url("../img/arrowdown.gif") no-repeat 90% 50%;
+}
+
+.filter {
+	cursor: pointer;
+}
+
+.select select,
+.select--edit select {
+    padding: 5px 8px;
+    width: 130%;
+    font-size: 15px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.select--edit {
+	padding: 2px;
+	margin: 8px 0;
+}
+
+.select select:focus {
+    outline: none;
+}
+
+.bottomNav {
+	display: flex;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px;
+}
+
+.bottomNav a {
+	color: white;
+	text-decoration: none;
+}
+
+.additionalIcons {
+    text-align: center;
+    cursor: pointer;
+    width: 115px;
+    flex-grow: 1;
+}
+
+.additionalIcons i {
+	font-size: 40px;
+}
+
+.iconLabel {
+	padding-top: 5px;
+	display: block;
+}
+
+.coalCounter {
+	display: block;
+	margin-top: 5px;
+}
+
+.coalCount {
+	font-size: 1.1em;
+	padding: 0 10px;
+}
+
+.wishList {
+	margin-left: 17%;
+}
+
+@media (max-width: 1250px) {
+	.sidenav {
+	background: #525252;
+	}
+}
+
+@media (max-width: 1160px) {
+
+	.sidenav.open {
+		width: 50%;
+	}
+
+	table {
+		margin: 45px auto 0;
+	}
+
+	td {
+	    min-width: 100%;
+	    max-width: 100%;
+	}
+
+	td input,
+	td select {
+		width: 100%;
+	}
+
+	.actionIcon {
+		padding: 0 15px;
+	}
+}
+
+@media (max-width: 900px){
+	.select--edit {
+		width: 88px;
+	}
+}

@@ -1,0 +1,33 @@
+<table ng-controller="kidsCtrl">
+	<tr>
+		<th>Name</th>
+		<th>Wish</th>
+		<th class="filter" ng-click="stateSort()">Naughty or Nice <i class="fa fa-sort-desc"></i></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<tr ng-repeat="kid in kids | filter:stateFilter">
+		<td>
+			<span ng-show="!edit">{{kid.name}}</span>
+			<input class="table-input" ng-show="edit" type="text" ng-model="kid.name"/>
+		</td>
+		<td>
+			<span ng-show="!edit">{{kid.wish}}</span>
+			<input class="table-input" ng-show="edit" type="text" ng-model="kid.wish"/>
+		</td>
+		<td>
+			<span ng-show="!edit">{{kid.state}}</span>
+			<div ng-show="edit" class="select--edit">
+		    	<select ng-model="kid.state" required>
+			    	<option value="Nice">Nice</option>
+			    	<option value="Naughty">Naughty</option>
+			    </select>
+		    </div>
+		    <div ng-if="kid.state == 'Naughty'" class="coalCounter"><i ng-show="edit" ng-click="addCoal(kid)" class="fa fa-plus fa-lg"></i><span class="coalCount"><span ng-show="!edit">Coal(s): </span>{{kid.coal}}</span><i ng-show="edit" ng-click="removeCoal(kid)" class="fa fa-minus fa-lg"></i></div>
+		</td>
+		<td ng-show="!edit" class="actionIcon"><i class="fa fa-pencil fa-lg" ng-click="update()"></i></td>
+		<td ng-show="edit" class="actionIcon"><i class="fa fa-check fa-lg" ng-click="update()"></i></td>
+		<td class="actionIcon"><i class="fa fa-times fa-lg" ng-click="deleteChild($index)"></i></td>
+	</tr>
+</table>
